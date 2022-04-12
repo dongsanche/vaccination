@@ -23,7 +23,7 @@ public class hospitalDaoImpl implements hospitalDao{
 //        catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println(saveResult);
+
         return saveResult;
     }
 
@@ -38,7 +38,6 @@ public class hospitalDaoImpl implements hospitalDao{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(saveResult);
     }
 
     @Override
@@ -68,7 +67,6 @@ public class hospitalDaoImpl implements hospitalDao{
 //        {
 //            System.out.println(a.getName());
 //        }
-        System.out.println(saveResult);
         return hoslist;
     }
 }

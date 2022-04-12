@@ -16,6 +16,15 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>admin</servlet-name>
+    <servlet-class>com.hospital.servlet.admin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>admin</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+
   <!--注册Servlet-->
   <servlet>
     <servlet-name>index</servlet-name>

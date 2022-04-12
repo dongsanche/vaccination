@@ -48,3 +48,20 @@ values (1, 0, '1234567', '123', '1983-10-10'),
        (5, 0, '韩路彪', '789', '1984-06-05');
 
 
+DROP TABLE IF EXISTS `admin`;
+
+CREATE TABLE `admin`
+(
+    `id`       bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+    `name`      varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '姓名',
+    `password`  varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '密码',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 19
+  DEFAULT CHARSET = utf8
+  COLLATE = utf8_unicode_ci;
+
+
+insert into `admin`(`id`, `name` , `password`)
+values (1, 'admin', '123')
+

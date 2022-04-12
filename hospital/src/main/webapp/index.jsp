@@ -29,23 +29,8 @@
             document.getElementById("yue_fen").innerHTML = myYear + "." + myMonth;
             document.getElementById("day_day").innerHTML = myYear + "." + myMonth + "." + myDay;
         }
-
-        <%--/**加入收藏夹**/--%>
-        <%--function addfavorite(){--%>
-        <%--    var ua = navigator.userAgent.toLowerCase();--%>
-        <%--    if (ua.indexOf("360se") > -1){--%>
-        <%--        art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'由于360浏览器功能限制，加入收藏夹功能失效', ok:true,});--%>
-        <%--    }else if (ua.indexOf("msie 8") > -1){--%>
-        <%--        window.external.AddToFavoritesBar('${dynamicURL}/authority/loginInit.action','西宁市公共租赁住房信息管理系统管理');//IE8--%>
-        <%--    }else if (document.all){--%>
-        <%--        window.external.addFavorite('${dynamicURL}/authority/loginInit.action','西宁市公共租赁住房信息管理系统管理');--%>
-        <%--    }else{--%>
-        <%--        art.dialog({icon:'error', title:'友情提示', drag:false, resize:false, content:'添加失败，请用ctrl+D进行添加', ok:true,});--%>
-        <%--    }--%>
-        <%--}--%>
     </script>
     <script type="text/javascript">
-        /* zTree插件加载目录的处理  */
         var zTree;
 
         var setting = {
@@ -66,8 +51,6 @@
                 }
             },
             callback: {
-                // 				beforeExpand: beforeExpand,
-                // 				onExpand: onExpand,
                 onClick: zTreeOnClick
             }
         };
@@ -200,14 +183,10 @@
 
         function loadMenu(resourceType, treeObj) {
             data = [];
-            // 如果返回数据不为空，加载"业务模块"目录
             if (data != null) {
-                // 将返回的数据赋给zTree
                 $.fn.zTree.init($("#" + treeObj), setting, data);
-//              alert(treeObj);
                 zTree = $.fn.zTree.getZTreeObj(treeObj);
                 if (zTree) {
-                    // 默认展开所有节点
                     zTree.expandAll(true);
                 }
             }
@@ -262,7 +241,7 @@
             <li id="left_tab1" class="selected" onClick="javascript:switchTab('TabPage2','left_tab1');" title="查询模块">
                 <img alt="业务模块" title="查询模块" src="images/common/1_hover.jpg" width="33" height="31">
             </li>
-            <li id="left_tab2" onClick="javascript:switchTab('TabPage2','left_tab2');" title="系统管理">
+            <li id="left_tab2" onClick="javascript:switchTab('TabPage2','left_tab2');" title="预约管理">
                 <img alt="系统管理" title="系统管理" src="images/common/2.jpg" width="33" height="31">
             </li>
             <li id="left_tab3" onClick="javascript:switchTab('TabPage2','left_tab3');" title="其他">
@@ -287,7 +266,7 @@
             }
             else
             {
-                document.getElementById("rightMain").src="http://localhost:8080/changeinfo.jsp"
+                document.getElementById("rightMain").src="http://localhost:8080/admin.jsp"
             }
             // $('#rightMain').src("http://localhost:8080/login.jsp")
             $('#nav_module').find('img').attr('src', 'images/common/module_' + (index + 1) + '.png');

@@ -33,8 +33,9 @@ public class changehospital extends HttpServlet {
         HttpSession session = req.getSession();
         DButil db = new DButil();
         Connection conn = db.getConnection();
-        System.out.println("ddddddddddd+:  " + req.getParameter("time"));
         String op = req.getParameter("method");
+        String op1 = req.getParameter("method1");
+        userDao us = new userDaoImpl();
         if (op != null) {
             if (op.equals("insert")) {
                 hospitalBean tmp = new hospitalBean(0, req.getParameter("name"), req.getParameter("addressDesc"));
@@ -43,14 +44,8 @@ public class changehospital extends HttpServlet {
                 hos.delete(conn, (String) req.getParameter("hosname"));
             }
         }
-
-
-        String op1 = req.getParameter("method1");
-        userDao us = new userDaoImpl();
-        if (op1 != null) {
+        else if (op1 != null) {
             if (op1.equals("insert")) {
-                System.out.println("ddddddddddd1+:  ");
-                System.out.println("ddddddddddd1+:  " + req.getParameter("name"));
                 userBean tmp = new userBean();
                 tmp.setId(0);
                 SimpleDateFormat tmpdate = new SimpleDateFormat("yyyy-MM-dd");
@@ -69,8 +64,6 @@ public class changehospital extends HttpServlet {
                 us.delete(conn, (String) req.getParameter("name"));
             }
         }
-
-
         hospitalService hosser = new hospitalServiceImpl();
         hosser.search("医院", session);
         session.setAttribute("userlist", us.search(conn, ""));

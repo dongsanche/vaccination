@@ -34,7 +34,7 @@ public class userDaoImpl implements userDao {
 //        catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
-        System.out.println(saveResult);
+
         return saveResult;
 
     }
@@ -82,7 +82,6 @@ public class userDaoImpl implements userDao {
     public Integer delete(Connection conn, String name) {
         Integer saveResult = 0;
         try {
-            System.out.println("删除对象：   "+name);
             String sql = "delete  from user where name=?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name);
@@ -90,7 +89,7 @@ public class userDaoImpl implements userDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("删除结果：   "+saveResult);
+
         return saveResult;
     }
 
@@ -137,7 +136,7 @@ public class userDaoImpl implements userDao {
             Integer idx=0;
             while(rs.next())
             {
-                System.out.println("sss     "+rs.getString("ordertime"));
+
                 userBean tmp=new userBean();
                 tmp.setId(idx++);
                 tmp.setUsername(rs.getString("name"));

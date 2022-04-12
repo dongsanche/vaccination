@@ -6,6 +6,7 @@
 <%
     String url;
     String msg=(String) request.getAttribute("msg");
+
     if (msg=="登录成功"||msg=="注册成功")
     {
         url="index";
@@ -14,9 +15,17 @@
     {
         url="register.jsp";
     }
-    else
+    else if(msg=="登录失败，用户不存在"||msg=="登录失败，密码错误")
     {
         url="login.jsp";
+    }
+    else if(msg=="重新登录")
+    {
+        url="admin.jsp";
+    }
+    else
+    {
+        url="changeinfo.jsp";
     }
     pageContext.setAttribute("url",url);
 //    request.getRequestDispatcher("/"+url);
@@ -30,7 +39,7 @@
    ${msg}，即将跳转...
 </h2>
 <%
-    System.out.println(url);
+
 //    url+="/";
 //    Timer timer=new Timer();
 //    String finalUrl = url;

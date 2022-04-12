@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 public class encodingFilter implements Filter{
     public void init(FilterConfig filterConfig) throws ServletException {
         // TODO Auto-generated method stub
-        System.out.println("CharacterEncodingFilter初始化");
+//        System.out.println("CharacterEncodingFilter初始化");
     }
 
 
